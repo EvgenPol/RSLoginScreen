@@ -7,24 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C934C36268E381900711926 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C934C34268E381900711926 /* ViewController.m */; };
+		6C934C37268E381900711926 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C934C35268E381900711926 /* ViewController.xib */; };
 		6CE4859E268E1F3100636AFB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE4859D268E1F3100636AFB /* AppDelegate.m */; };
-		6CE485A1268E1F3100636AFB /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE485A0268E1F3100636AFB /* SceneDelegate.m */; };
-		6CE485A4268E1F3100636AFB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE485A3268E1F3100636AFB /* ViewController.m */; };
-		6CE485A7268E1F3100636AFB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CE485A5268E1F3100636AFB /* Main.storyboard */; };
 		6CE485A9268E1F3800636AFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CE485A8268E1F3800636AFB /* Assets.xcassets */; };
 		6CE485AC268E1F3800636AFB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CE485AA268E1F3800636AFB /* LaunchScreen.storyboard */; };
 		6CE485AF268E1F3800636AFB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE485AE268E1F3800636AFB /* main.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6C934C33268E381900711926 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		6C934C34268E381900711926 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		6C934C35268E381900711926 /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		6CE48599268E1F3100636AFB /* RSLoginScreen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RSLoginScreen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CE4859C268E1F3100636AFB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6CE4859D268E1F3100636AFB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		6CE4859F268E1F3100636AFB /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
-		6CE485A0268E1F3100636AFB /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		6CE485A2268E1F3100636AFB /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		6CE485A3268E1F3100636AFB /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		6CE485A6268E1F3100636AFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6CE485A8268E1F3800636AFB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6CE485AB268E1F3800636AFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6CE485AD268E1F3800636AFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -63,11 +60,9 @@
 			children = (
 				6CE4859C268E1F3100636AFB /* AppDelegate.h */,
 				6CE4859D268E1F3100636AFB /* AppDelegate.m */,
-				6CE4859F268E1F3100636AFB /* SceneDelegate.h */,
-				6CE485A0268E1F3100636AFB /* SceneDelegate.m */,
-				6CE485A2268E1F3100636AFB /* ViewController.h */,
-				6CE485A3268E1F3100636AFB /* ViewController.m */,
-				6CE485A5268E1F3100636AFB /* Main.storyboard */,
+				6C934C33268E381900711926 /* ViewController.h */,
+				6C934C34268E381900711926 /* ViewController.m */,
+				6C934C35268E381900711926 /* ViewController.xib */,
 				6CE485A8268E1F3800636AFB /* Assets.xcassets */,
 				6CE485AA268E1F3800636AFB /* LaunchScreen.storyboard */,
 				6CE485AD268E1F3800636AFB /* Info.plist */,
@@ -133,8 +128,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				6CE485AC268E1F3800636AFB /* LaunchScreen.storyboard in Resources */,
+				6C934C37268E381900711926 /* ViewController.xib in Resources */,
 				6CE485A9268E1F3800636AFB /* Assets.xcassets in Resources */,
-				6CE485A7268E1F3100636AFB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,24 +140,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6CE485A4268E1F3100636AFB /* ViewController.m in Sources */,
+				6C934C36268E381900711926 /* ViewController.m in Sources */,
 				6CE4859E268E1F3100636AFB /* AppDelegate.m in Sources */,
 				6CE485AF268E1F3800636AFB /* main.m in Sources */,
-				6CE485A1268E1F3100636AFB /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		6CE485A5268E1F3100636AFB /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6CE485A6268E1F3100636AFB /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		6CE485AA268E1F3800636AFB /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -294,6 +280,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H667QRM4K6;
 				INFOPLIST_FILE = RSLoginScreen/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -312,6 +299,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H667QRM4K6;
 				INFOPLIST_FILE = RSLoginScreen/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
