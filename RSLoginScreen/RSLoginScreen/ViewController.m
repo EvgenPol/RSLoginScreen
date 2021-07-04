@@ -73,7 +73,7 @@
     }
 }
 
-
+//Made by Evgeny Poliubin
 - (IBAction)secureButtonTap:(UIButton *)sender {
     if ([self.secureLabel.text isEqual:@"_"]) {
         self.secureLabel.text = sender.titleLabel.text;
