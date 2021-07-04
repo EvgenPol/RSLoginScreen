@@ -11,11 +11,16 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController" customModule="RSLoginScreen" customModuleProvider="target">
             <connections>
-                <outlet property="authorizeButton" destination="7Na-o8-DdN" id="oDf-8s-cfE"/>
                 <outlet property="login" destination="op1-TI-cww" id="LpV-eu-XPb"/>
                 <outlet property="logo" destination="j70-A4-IL8" id="fBk-Qd-cpq"/>
                 <outlet property="password" destination="Gt5-H9-iZy" id="fBG-OX-cdg"/>
+                <outlet property="secure" destination="v44-rH-Jzh" id="xoJ-aV-YlX"/>
+                <outlet property="secureLabel" destination="Xt2-K4-oMD" id="jvk-8d-4Qm"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outletCollection property="buttonsOnScreen" destination="Q0s-dL-Q6Z" id="7Wl-Hl-Ynr"/>
+                <outletCollection property="buttonsOnScreen" destination="ZIo-Gh-XlT" id="VX9-n8-LAt"/>
+                <outletCollection property="buttonsOnScreen" destination="m20-eN-LWQ" id="7CX-KW-vgm"/>
+                <outletCollection property="buttonsOnScreen" destination="7Na-o8-DdN" id="SJV-rg-Pnk"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -65,16 +70,28 @@
                         <action selector="tryAuthorize:" destination="-1" eventType="touchUpInside" id="D3a-za-6e2"/>
                     </connections>
                 </button>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v44-rH-Jzh">
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v44-rH-Jzh">
                     <rect key="frame" x="108" y="470" width="236" height="110"/>
                     <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xt2-K4-oMD">
+                            <rect key="frame" x="112.66666666666666" y="6.0000000000000018" width="10.666666666666671" height="21.666666666666671"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZIo-Gh-XlT">
                             <rect key="frame" x="23" y="45" width="50" height="50"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="aXT-Bv-cQc"/>
                                 <constraint firstAttribute="width" constant="50" id="igK-0i-jVJ"/>
                             </constraints>
-                            <state key="normal" title="1"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                            <state key="normal" title="1">
+                                <color key="titleColor" red="0.50224202870000001" green="0.64159572119999997" blue="0.92863225940000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="secureButtonTap:" destination="-1" eventType="touchUpInside" id="jBS-nR-m1u"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q0s-dL-Q6Z">
                             <rect key="frame" x="93" y="45" width="50" height="50"/>
@@ -82,7 +99,13 @@
                                 <constraint firstAttribute="width" constant="50" id="1Fw-JO-Dfc"/>
                                 <constraint firstAttribute="height" constant="50" id="6ee-jW-mYM"/>
                             </constraints>
-                            <state key="normal" title="1"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                            <state key="normal" title="2">
+                                <color key="titleColor" red="0.50224202870000001" green="0.64159572119999997" blue="0.92863225940000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="secureButtonTap:" destination="-1" eventType="touchUpInside" id="KhB-9B-vzi"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m20-eN-LWQ">
                             <rect key="frame" x="163" y="45" width="50" height="50"/>
@@ -90,15 +113,23 @@
                                 <constraint firstAttribute="height" constant="50" id="T0N-ir-0Sv"/>
                                 <constraint firstAttribute="width" constant="50" id="q7K-La-xCV"/>
                             </constraints>
-                            <state key="normal" title="1"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                            <state key="normal" title="3">
+                                <color key="titleColor" red="0.50224202870000001" green="0.64159572119999997" blue="0.92863225940000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="secureButtonTap:" destination="-1" eventType="touchUpInside" id="uzJ-cW-G7F"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
+                        <constraint firstItem="Xt2-K4-oMD" firstAttribute="top" secondItem="v44-rH-Jzh" secondAttribute="top" constant="6" id="0CU-zP-nFq"/>
                         <constraint firstAttribute="bottom" secondItem="ZIo-Gh-XlT" secondAttribute="bottom" constant="15" id="1TP-6B-nOp"/>
                         <constraint firstAttribute="bottom" secondItem="Q0s-dL-Q6Z" secondAttribute="bottom" constant="15" id="CPc-Og-vqc"/>
                         <constraint firstItem="ZIo-Gh-XlT" firstAttribute="leading" secondItem="v44-rH-Jzh" secondAttribute="leading" constant="23" id="K2L-8e-kvN"/>
                         <constraint firstItem="m20-eN-LWQ" firstAttribute="leading" secondItem="Q0s-dL-Q6Z" secondAttribute="trailing" constant="20" id="LsZ-Ho-NOM"/>
+                        <constraint firstItem="Xt2-K4-oMD" firstAttribute="centerX" secondItem="Q0s-dL-Q6Z" secondAttribute="centerX" id="Mln-Zm-Ib5"/>
                         <constraint firstItem="ZIo-Gh-XlT" firstAttribute="top" secondItem="v44-rH-Jzh" secondAttribute="top" constant="45" id="Wre-4O-FZG"/>
                         <constraint firstAttribute="bottom" secondItem="m20-eN-LWQ" secondAttribute="bottom" constant="15" id="YkY-RO-VqZ"/>
                         <constraint firstItem="Q0s-dL-Q6Z" firstAttribute="top" secondItem="v44-rH-Jzh" secondAttribute="top" constant="45" id="cr4-n4-tqu"/>
@@ -107,13 +138,6 @@
                         <constraint firstItem="Q0s-dL-Q6Z" firstAttribute="leading" secondItem="ZIo-Gh-XlT" secondAttribute="trailing" constant="20" id="pQJ-cc-fch"/>
                     </constraints>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xt2-K4-oMD">
-                    <rect key="frame" x="205" y="477" width="42" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

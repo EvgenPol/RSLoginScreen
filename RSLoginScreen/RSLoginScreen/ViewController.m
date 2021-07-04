@@ -6,105 +6,129 @@
 //
 
 #import "ViewController.h"
+#import "UIButton+SetUp.h"
+#import "UIView+MyState.h"
 
 @interface ViewController () <UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *logo;
 @property (weak, nonatomic) IBOutlet UITextField *login;
 @property (weak, nonatomic) IBOutlet UITextField *password;
+@property (weak, nonatomic) IBOutlet UIView *secure;
+@property (weak, nonatomic) IBOutlet UILabel *secureLabel;
 
+@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *buttonsOnScreen;
 
--(void)setUpForReady: (UITextField *) textField;
--(void)setUpForError: (UITextField *) textField;
--(void)setUpForSuccess: (UITextField *) textField;
+-(void)presentAlert;
+-(void)closeKeyboard;
 
-
-@property (weak, nonatomic) IBOutlet UIButton *authorizeButton;
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    UITapGestureRecognizer *gestureForHideKeyboard = [[UITapGestureRecognizer alloc] initWithTarget: self action: @selector(closeKeyboard)];
-    
-    [self.view addGestureRecognizer: gestureForHideKeyboard];
   
-    [self setUpForReady:self.login];
-    [self setUpForReady:self.password];
+    UITapGestureRecognizer *gestureForHideKeyboard = [[UITapGestureRecognizer alloc] initWithTarget: self action: @selector(closeKeyboard)];
+    [self.view addGestureRecognizer: gestureForHideKeyboard];
+    
+    [self.login setUpForState:MyStateReady];
+    [self.password setUpForState:MyStateReady];
+    [self.secure setUpForState:MyStateReady];
+    
+    for (UIButton *button in self.buttonsOnScreen) {
+        [button setUp];
+    }
     
     self.login.delegate =  self;
     self.password.delegate = self;
-    //      Little Boy Blue color in RGB = (128, 164, 237)
-    UIColor *littleBoyBlue =  [[UIColor alloc] initWithRed:(128/255.0) green:(164/255.0) blue:(237/255.0) alpha:1];
-
-    self.authorizeButton.layer.borderWidth = 2;
-    self.authorizeButton.layer.borderColor = littleBoyBlue.CGColor;
-    self.authorizeButton.layer.cornerRadius = 10;
-    [self.authorizeButton targetForAction:@selector(changeBackground) withSender:self];
     
 }
 
--(void)changeBackground {
-    
-}
-
--(void)setUpForReady: (UITextField *) textField {
-    //normal border color
-    //Black Coral color in RGB = (76,92,104)
-    textField.layer.borderColor = [[UIColor alloc] initWithRed:(76/255.0) green:(92/255.0) blue:(104/255.0) alpha:1].CGColor;
-    textField.layer.borderWidth = 1.5;
-    textField.layer.cornerRadius = 5;
-    textField.textColor = [[UIColor alloc] initWithWhite:0 alpha:1];
-}
-
--(void)setUpForError:(UITextField *) textField {
-    //error border color
-    //Venetian Red color in RGB = (194,1,20)
-    textField.layer.borderColor = [[UIColor alloc] initWithRed:(194/255.0) green:(1/255.0) blue:(20/255.0) alpha:1].CGColor;
-}
-
--(void)setUpForSuccess:(UITextField *) textField {
-    //succes border color, and text alpha = 0.5
-    //Turquoise Green color in RGB = (145, 199, 177)
-    textField.layer.borderColor = [[UIColor alloc] initWithRed:(145/255.0) green:(199/255.0) blue:(177/255.0) alpha:1].CGColor;
-    textField.textColor = [[UIColor alloc] initWithWhite:0 alpha:0.5];
-    [textField setEnabled:NO];
-}
- 
 - (IBAction)tryAuthorize:(UIButton *)sender {
     int checks = 0;
-    if ([self.login.text  isEqual: @"username"]) {
+    if ([self.login.text  isEqual: @"login"]) {
         checks ++ ;
     } else {
-        [self setUpForError:self.login];
+        [self.login setUpForState:MyStateError];
     }
     if ([self.password.text isEqual:@"password"]) {
         checks ++ ;
     } else {
-        [self setUpForError:self.password];
+        [self.password setUpForState:MyStateError];
     }
     if (checks == 2) {
-        [self setUpForSuccess:self.login];
-        [self setUpForSuccess:self.password];
-        [self.authorizeButton setEnabled:NO];
+        [self.login setUpForState:MyStateSuccess];
+        [self.password setUpForState:MyStateSuccess];
+        [self closeKeyboard];
+        self.secure.hidden = NO;
+        for (UIButton *button in self.buttonsOnScreen) {
+            if ([button.titleLabel.text isEqual:@"Authorize"]) {
+                button.enabled = NO;
+                button.layer.borderColor = [UIColor colorNamed:@"LittleBoyBlue-0.5a"].CGColor;
+            }
+        }
     }
 }
 
-//func for close keyboard
+
+- (IBAction)secureButtonTap:(UIButton *)sender {
+    if ([self.secureLabel.text isEqual:@"_"]) {
+        self.secureLabel.text = sender.titleLabel.text;
+        
+    } else {
+        self.secureLabel.text = [NSString stringWithFormat:@"%@ %@", self.secureLabel.text, sender.titleLabel.text];
+    }
+    if (self.secureLabel.text.length == 5) {
+        if ([self.secureLabel.text isEqual: @"1 3 2"]) {
+            [self.secure setUpForState:MyStateSuccess];
+            [self presentAlert];
+            for (UIButton *button in self.buttonsOnScreen) {
+                if (![button isEqual:@"Authorize"]) {
+                    button.enabled = NO;
+                }
+            }
+        } else {
+            [self.secure setUpForState:MyStateError];
+            self.secureLabel.text = @"_";
+        }
+    }
+}
+
+//
+
 -(void)closeKeyboard {
     [self.view endEditing:YES];
 }
 
+//
+
+-(void)presentAlert {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Welcome!"
+                                                                   message:nil
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    
+    [alert addAction:[UIAlertAction actionWithTitle:@"Refresh"
+                                              style:UIAlertActionStyleDestructive
+                                            handler:^(UIAlertAction * _Nonnull action) {
+        [self loadView];
+        [self viewDidLoad];
+    }]];
+    
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+
 @end
 
 //MARK: funcional for keyboard
-@interface ViewController (Delegate)
+@interface ViewController (DelegateForTextField)
 
 @end
 
-@implementation  ViewController (Delegate)
+@implementation  ViewController (DelegateForTextField)
+
+
 
 //delegate for login UITextField
 -(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
@@ -125,9 +149,10 @@
 }
 
 -(BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
-    [self setUpForReady:textField];
+    [textField setUpForState:MyStateReady];
     return YES;
 }
+
 
 
 @end
