@@ -47,12 +47,14 @@
 
 - (IBAction)tryAuthorize:(UIButton *)sender {
     int checks = 0;
-    if ([self.login.text  isEqual: @"login"]) {
+    if ([self.login.text  isEqual: @"username"]) {
+        [self.login setUpForState:MyStateReady];
         checks ++ ;
     } else {
         [self.login setUpForState:MyStateError];
     }
     if ([self.password.text isEqual:@"password"]) {
+        [self.password setUpForState:MyStateReady];
         checks ++ ;
     } else {
         [self.password setUpForState:MyStateError];
@@ -104,8 +106,8 @@
 //
 
 -(void)presentAlert {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Welcome!"
-                                                                   message:nil
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Welcome"
+                                                                   message:@"You are successfuly authorized!"
                                                             preferredStyle:UIAlertControllerStyleAlert];
     
     [alert addAction:[UIAlertAction actionWithTitle:@"Refresh"

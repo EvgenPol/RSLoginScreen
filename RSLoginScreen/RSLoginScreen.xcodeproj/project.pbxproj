@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6C3C88CD2691D61500747EBE /* UIButton+SetUp.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3C88CC2691D61500747EBE /* UIButton+SetUp.m */; };
 		6C3C88D02691FAED00747EBE /* UIView+MyState.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3C88CF2691FAED00747EBE /* UIView+MyState.m */; };
+		6C3C88D32692298300747EBE /* UIButton+SetUp.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3C88D22692298300747EBE /* UIButton+SetUp.m */; };
 		6C934C36268E381900711926 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C934C34268E381900711926 /* ViewController.m */; };
 		6C934C37268E381900711926 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C934C35268E381900711926 /* ViewController.xib */; };
 		6CE4859E268E1F3100636AFB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE4859D268E1F3100636AFB /* AppDelegate.m */; };
@@ -18,10 +18,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6C3C88CB2691D61500747EBE /* UIButton+SetUp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+SetUp.h"; sourceTree = "<group>"; };
-		6C3C88CC2691D61500747EBE /* UIButton+SetUp.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+SetUp.m"; sourceTree = "<group>"; };
 		6C3C88CE2691FAED00747EBE /* UIView+MyState.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+MyState.h"; sourceTree = "<group>"; };
 		6C3C88CF2691FAED00747EBE /* UIView+MyState.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+MyState.m"; sourceTree = "<group>"; };
+		6C3C88D12692298300747EBE /* UIButton+SetUp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+SetUp.h"; sourceTree = "<group>"; };
+		6C3C88D22692298300747EBE /* UIButton+SetUp.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+SetUp.m"; sourceTree = "<group>"; };
 		6C934C33268E381900711926 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		6C934C34268E381900711926 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		6C934C35268E381900711926 /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
@@ -68,8 +68,8 @@
 				6CE4859D268E1F3100636AFB /* AppDelegate.m */,
 				6C934C33268E381900711926 /* ViewController.h */,
 				6C934C34268E381900711926 /* ViewController.m */,
-				6C3C88CB2691D61500747EBE /* UIButton+SetUp.h */,
-				6C3C88CC2691D61500747EBE /* UIButton+SetUp.m */,
+				6C3C88D12692298300747EBE /* UIButton+SetUp.h */,
+				6C3C88D22692298300747EBE /* UIButton+SetUp.m */,
 				6C3C88CE2691FAED00747EBE /* UIView+MyState.h */,
 				6C3C88CF2691FAED00747EBE /* UIView+MyState.m */,
 				6C934C35268E381900711926 /* ViewController.xib */,
@@ -150,7 +150,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6C3C88CD2691D61500747EBE /* UIButton+SetUp.m in Sources */,
+				6C3C88D32692298300747EBE /* UIButton+SetUp.m in Sources */,
 				6C3C88D02691FAED00747EBE /* UIView+MyState.m in Sources */,
 				6C934C36268E381900711926 /* ViewController.m in Sources */,
 				6CE4859E268E1F3100636AFB /* AppDelegate.m in Sources */,
@@ -299,7 +299,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = PoliubinEE.RSLoginScreen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -318,7 +318,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = PoliubinEE.RSLoginScreen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

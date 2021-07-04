@@ -41,7 +41,7 @@
                 self.textColor = [[UIColor alloc] initWithWhite:0 alpha:0.5];
                 self.userInteractionEnabled = NO;
             }
-            self.layer.borderColor = [UIColor colorNamed:@"TurquoiseGreen-0.5a"].CGColor;
+            self.layer.borderColor = [UIColor colorNamed:@"TurquoiseGreen"].CGColor;
             break;
             }
 }

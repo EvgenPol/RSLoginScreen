@@ -1,5 +1,5 @@
 //
-//  UIButton+SetBackgroundForHighlightedState.m
+//  UIButton+SetUp.m
 //  RSLoginScreen
 //
 //  Created by Евгений Полюбин on 04.07.2021.
@@ -8,8 +8,6 @@
 #import "UIButton+SetUp.h"
 
 @implementation UIButton (SetUp)
-
-
 
 -(void)setUp {
 
