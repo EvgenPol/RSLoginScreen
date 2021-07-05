@@ -45,6 +45,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6C3C88D52693468900747EBE /* OtherStuff */ = {
+			isa = PBXGroup;
+			children = (
+				6CE4859C268E1F3100636AFB /* AppDelegate.h */,
+				6CE4859D268E1F3100636AFB /* AppDelegate.m */,
+				6CE485A8268E1F3800636AFB /* Assets.xcassets */,
+				6CE485AA268E1F3800636AFB /* LaunchScreen.storyboard */,
+				6CE485AE268E1F3800636AFB /* main.m */,
+			);
+			path = OtherStuff;
+			sourceTree = "<group>";
+		};
 		6CE48590268E1F3100636AFB = {
 			isa = PBXGroup;
 			children = (
@@ -64,8 +76,7 @@
 		6CE4859B268E1F3100636AFB /* RSLoginScreen */ = {
 			isa = PBXGroup;
 			children = (
-				6CE4859C268E1F3100636AFB /* AppDelegate.h */,
-				6CE4859D268E1F3100636AFB /* AppDelegate.m */,
+				6C3C88D52693468900747EBE /* OtherStuff */,
 				6C934C33268E381900711926 /* ViewController.h */,
 				6C934C34268E381900711926 /* ViewController.m */,
 				6C3C88D12692298300747EBE /* UIButton+SetUp.h */,
@@ -73,10 +84,7 @@
 				6C3C88CE2691FAED00747EBE /* UIView+MyState.h */,
 				6C3C88CF2691FAED00747EBE /* UIView+MyState.m */,
 				6C934C35268E381900711926 /* ViewController.xib */,
-				6CE485A8268E1F3800636AFB /* Assets.xcassets */,
-				6CE485AA268E1F3800636AFB /* LaunchScreen.storyboard */,
 				6CE485AD268E1F3800636AFB /* Info.plist */,
-				6CE485AE268E1F3800636AFB /* main.m */,
 			);
 			path = RSLoginScreen;
 			sourceTree = "<group>";
