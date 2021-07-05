@@ -29,9 +29,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
   
+    //Recognizer for closing keyboard
     UITapGestureRecognizer *gestureForHideKeyboard = [[UITapGestureRecognizer alloc] initWithTarget: self action: @selector(closeKeyboard)];
     [self.view addGestureRecognizer: gestureForHideKeyboard];
     
+    //Initial setting
     [self.login setUpForState:MyStateReady];
     [self.password setUpForState:MyStateReady];
     [self.secure setUpForState:MyStateReady];
@@ -44,6 +46,7 @@
     self.password.delegate = self;
     
 }
+
 
 - (IBAction)tryAuthorize:(UIButton *)sender {
     int checks = 0;
@@ -121,17 +124,17 @@
     [self presentViewController:alert animated:YES completion:nil];
 }
 
-
 @end
+
+
 
 //MARK: funcional for keyboard
 @interface ViewController (DelegateForTextField)
 
 @end
 
+
 @implementation  ViewController (DelegateForTextField)
-
-
 
 //Delegate for login UITextField
 -(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
