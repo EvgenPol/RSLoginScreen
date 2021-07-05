@@ -155,7 +155,7 @@
 }
 
 -(BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
-    if (textField.layer.borderColor == [UIColor colorNamed:@"VenetianRed"].CGColor) {
+    if (!([textField.text isEqual:@"username"] || [textField.text isEqual:@"password"])){
         [textField setUpForState:MyStateReady];
     }
     return YES;
