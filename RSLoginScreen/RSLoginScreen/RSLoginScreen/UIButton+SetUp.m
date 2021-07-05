@@ -34,6 +34,14 @@
     [super touchesEnded:touches withEvent:event];
 }
 
+- (void)setHighlighted:(BOOL)highlighted
+{
+    [super setHighlighted:highlighted];
+    if (![self.titleLabel.text isEqual:@"Authorize"]) {
+        self.titleLabel.alpha = 1.0;
+    }
+    
+}
 
 
 @end

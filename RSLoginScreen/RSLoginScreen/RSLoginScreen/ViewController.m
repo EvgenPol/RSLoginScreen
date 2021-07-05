@@ -48,13 +48,13 @@
 - (IBAction)tryAuthorize:(UIButton *)sender {
     int checks = 0;
     if ([self.login.text  isEqual: @"username"]) {
-        [self.login setUpForState:MyStateReady];
+        self.login.layer.borderColor = [UIColor colorNamed:@"TurquoiseGreen"].CGColor;
         checks ++ ;
     } else {
         [self.login setUpForState:MyStateError];
     }
     if ([self.password.text isEqual:@"password"]) {
-        [self.password setUpForState:MyStateReady];
+        self.password.layer.borderColor = [UIColor colorNamed:@"TurquoiseGreen"].CGColor;
         checks ++ ;
     } else {
         [self.password setUpForState:MyStateError];
@@ -77,13 +77,14 @@
 - (IBAction)secureButtonTap:(UIButton *)sender {
     if ([self.secureLabel.text isEqual:@"_"]) {
         self.secureLabel.text = sender.titleLabel.text;
-        
+        [self.secure setUpForState:MyStateReady];
     } else {
         self.secureLabel.text = [NSString stringWithFormat:@"%@ %@", self.secureLabel.text, sender.titleLabel.text];
     }
     if (self.secureLabel.text.length == 5) {
         if ([self.secureLabel.text isEqual: @"1 3 2"]) {
             [self.secure setUpForState:MyStateSuccess];
+            self.secure.layer.borderColor = [UIColor colorNamed:@"TurquoiseGreen"].CGColor;
             [self presentAlert];
             for (UIButton *button in self.buttonsOnScreen) {
                 if (![button isEqual:@"Authorize"]) {
