@@ -22,26 +22,35 @@
     self.layer.borderColor = [UIColor colorNamed:@"LittleBoyBlue"].CGColor;
 }
 
-
-//functionality for changing the background
+//Functionality for changing the Highlighted state
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    self.backgroundColor = [UIColor colorNamed:@"LittleBoyBlue-0.2a"];
     [super touchesBegan:touches withEvent:event];
-}
--(void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    self.backgroundColor = [UIColor colorWithWhite:0 alpha:0];
-    [super touchesEnded:touches withEvent:event];
+    self.backgroundColor = [UIColor colorNamed:@"LittleBoyBlue-0.2a"];
+    
+    if (![self.titleLabel.text isEqual:@"Authorize"]) {
+        [self setHighlighted:NO];
+    } else {
+        [self setImage:[UIImage imageNamed:@"Per"] forState:UIControlStateHighlighted];
+        self.titleLabel.alpha = 0.2;
+    }
+   
 }
 
-- (void)setHighlighted:(BOOL)highlighted
-{
-    [super setHighlighted:highlighted];
-    if (![self.titleLabel.text isEqual:@"Authorize"]) {
-        self.titleLabel.alpha = 1.0;
-    }
+-(void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [super touchesEnded:touches withEvent:event];
+    self.backgroundColor = [UIColor colorWithWhite:0 alpha:0];
     
+    if ([self.titleLabel.text isEqual:@"Authorize"]) {
+        self.titleLabel.alpha = 1.0;
+    } else {
+        [UIView performWithoutAnimation:^{
+          [self setHighlighted:NO];
+          [self layoutIfNeeded];
+        }];
+    }
 }
+
 
 
 @end

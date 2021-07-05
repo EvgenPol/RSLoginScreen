@@ -73,7 +73,7 @@
     }
 }
 
-//Made by Evgeny Poliubin
+
 - (IBAction)secureButtonTap:(UIButton *)sender {
     if ([self.secureLabel.text isEqual:@"_"]) {
         self.secureLabel.text = sender.titleLabel.text;
@@ -133,7 +133,7 @@
 
 
 
-//delegate for login UITextField
+//Delegate for login UITextField
 -(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
     if ([textField isEqual:self.login]) {
         NSCharacterSet *characterSet = [NSCharacterSet letterCharacterSet];
@@ -152,10 +152,12 @@
 }
 
 -(BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
-    [textField setUpForState:MyStateReady];
+    if (textField.layer.borderColor == [UIColor colorNamed:@"VenetianRed"].CGColor) {
+        [textField setUpForState:MyStateReady];
+    }
     return YES;
 }
-
+//Made by Evgeny Poliubin
 
 
 @end

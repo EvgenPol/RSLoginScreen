@@ -7,6 +7,7 @@
 
 #import <UIKit/UIKit.h>
 
+//States for controle a view
 typedef enum {
     MyStateReady,
     MyStateError,
@@ -16,8 +17,6 @@ typedef enum {
 NS_ASSUME_NONNULL_BEGIN
 
 @interface UIView (MyState)
-
-
 
 -(void)setUpForState:(NSInteger)state;
 

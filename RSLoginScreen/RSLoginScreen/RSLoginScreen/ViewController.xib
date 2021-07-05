@@ -60,21 +60,23 @@
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="6" maxY="0.0"/>
                     <state key="normal" title="Authorize" image="person">
                         <color key="titleColor" name="LittleBoyBlue"/>
-                        <color key="titleShadowColor" red="0.135992378" green="0.12997448440000001" blue="0.13324609400000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20" scale="medium"/>
                     </state>
                     <state key="disabled" title="Authorize">
                         <color key="titleColor" name="LittleBoyBlue-0.5a"/>
                     </state>
-                    <state key="highlighted" title="Authorize" image="person.fill">
-                        <color key="titleColor" name="LittleBoyBlue-0.4a"/>
+                    <state key="selected" image="Per">
+                        <color key="titleColor" name="LittleBoyBlue"/>
+                    </state>
+                    <state key="highlighted" title="Authorize">
+                        <color key="titleColor" name="LittleBoyBlue"/>
                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20" scale="medium"/>
                     </state>
                     <connections>
                         <action selector="tryAuthorize:" destination="-1" eventType="touchUpInside" id="D3a-za-6e2"/>
                     </connections>
                 </button>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v44-rH-Jzh">
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v44-rH-Jzh">
                     <rect key="frame" x="69" y="470" width="236" height="110"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xt2-K4-oMD">
@@ -172,13 +174,10 @@
         </view>
     </objects>
     <resources>
+        <image name="Per" width="16" height="16"/>
         <image name="person" width="16" height="16"/>
-        <image name="person.fill" width="16" height="16"/>
         <namedColor name="LittleBoyBlue">
             <color red="0.50196078431372548" green="0.64313725490196083" blue="0.92941176470588238" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="LittleBoyBlue-0.4a">
-            <color red="0.50199997425079346" green="0.64300000667572021" blue="0.92900002002716064" alpha="0.40000000596046448" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="LittleBoyBlue-0.5a">
             <color red="0.50196078431372548" green="0.64313725490196083" blue="0.92941176470588238" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
