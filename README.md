@@ -24,7 +24,9 @@
 
 # Фотографии проекта
 ![FotoOne](https://user-images.githubusercontent.com/78258561/127765514-27c905f7-c7e0-4e95-8664-0bbb8ba77adf.png)
+
 ![FotoTwo](https://user-images.githubusercontent.com/78258561/127765522-2514c083-813a-4b54-a8f1-408b43508122.png)
+
 ![FotoThree](https://user-images.githubusercontent.com/78258561/127765524-d3c563d4-0f93-48a5-a774-6e6da020912b.png)
 
 
